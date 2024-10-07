@@ -80,7 +80,7 @@ gem install lolcat
 apt install wondershaper -y
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/Adidastore11/adi2/main/"
+    REPO="https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/"
 
 ####
 start=$(date +%s)
@@ -263,7 +263,7 @@ restart_system(){
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo -e "\e[32mloading...\e[0m" 
 clear
-izinsc="https://raw.githubusercontent.com/Adidastore11/adi2/main/Regist"
+izinsc="https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/Regist"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
@@ -318,7 +318,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
 <i>Automatic Notifications From Github</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://wa.me/6285338624955"}]]}' 
 
-    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+    # curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 clear
 # Pasang SSL
@@ -523,7 +523,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/Adidastore11/adi2/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/

@@ -44,7 +44,7 @@ clear
 ipsaya=$(curl -sS ipv4.icanhazip.com)
 data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 date_list=$(date +"%Y-%m-%d" -d "$data_server")
-data_ip="https://raw.githubusercontent.com/Adidastore11/adi2/main/Regist"
+data_ip="https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/Regist"
 checking_sc() {
   useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
   if [[ $date_list < $useexp ]]; then
@@ -283,7 +283,7 @@ Aktif Selama   : $pup Menit
 <code>◇━━━━━━━━━━━━━━━━━◇</code>
 "
 
-curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+# curl -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
 echo "tunnel vmess ${user}" | at now +$pup minutes &> /dev/null
 echo -e ""

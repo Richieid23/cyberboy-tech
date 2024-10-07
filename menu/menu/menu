@@ -113,7 +113,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    wget https://raw.githubusercontent.com/Adidastore11/adi2/main/menu/menu.zip
+    wget https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/menu/menu.zip
     unzip menu.zip
     chmod +x menu/*
     mv menu/* /usr/local/sbin
@@ -167,7 +167,7 @@ SERONLINE=$(uptime -p | cut -d " " -f 2-10000)
 clear
 MYIP=$(curl -sS ipv4.icanhazip.com)
 echo ""
-izinsc="https://raw.githubusercontent.com/Adidastore11/adi2/main/Regist"
+izinsc="https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/Regist"
 # USERNAME
 rm -f /usr/bin/user
 username=$(curl ${izinsc} | grep $MYIP | awk '{print $2}')

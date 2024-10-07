@@ -58,7 +58,7 @@ clear
 
 
 
-REPO="https://raw.githubusercontent.com/Adidastore11/adi2/main/config/"
+REPO="https://raw.githubusercontent.com/Richieid23/cyberboy-tech/refs/heads/main/config/"
 # fixhap fix Haproxy
 clear
 echo -e "${BlueCyan} ------------------------- ${Xark} "
