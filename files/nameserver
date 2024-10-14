@@ -1,27 +1,27 @@
 #!/bin/bash
 REPO="https://raw.githubusercontent.com/Fv-store/slowdns/main/"
 ns_domain_cloudflare() {
-	DOMAIN=kingvpn.my.id
+	DOMAIN=amaq-najwa.my.id
 	DOMAIN_PATH=$(cat /etc/xray/domain)
 	SUB=$(tr </dev/urandom -dc a-z0-9 | head -c7)
-	SUB_DOMAIN=${SUB}.kingvpn.my.id
+	SUB_DOMAIN=${SUB}.amaq-najwa.my.id
 	NS_DOMAIN=${SUB_DOMAIN}
-	CF_ID=hannaugo@gmail.com
-        CF_KEY=e3341a6705e970eda3577f440d0cca6e3d682
+	CF_ID=fitrarizki.dev@gmail.com
+    CF_KEY=k-I66cU8tkmUxUNg3XxMBq66ha-pZhCMpHPmxerT
 	set -euo pipefail
 	IP=$(wget -qO- ipinfo.io/ip)
 	echo "Updating DNS NS for ${NS_DOMAIN}..."
 	ZONE=$(
 		curl -sLX GET "https://api.cloudflare.com/client/v4/zones?name=${DOMAIN}&status=active" \
 		-H "X-Auth-Email: ${CF_ID}" \
-		-H "X-Auth-Key: ${CF_KEY}" \
+		-H "Authorization: Bearer ${CF_KEY}" \
 		-H "Content-Type: application/json" | jq -r .result[0].id
 	)
 
 	RECORD=$(
 		curl -sLX GET "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records?name=${NS_DOMAIN}" \
 		-H "X-Auth-Email: ${CF_ID}" \
-		-H "X-Auth-Key: ${CF_KEY}" \
+		-H "Authorization: Bearer ${CF_KEY}" \
 		-H "Content-Type: application/json" | jq -r .result[0].id
 	)
 
@@ -29,7 +29,7 @@ ns_domain_cloudflare() {
 		RECORD=$(
 			curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records" \
 			-H "X-Auth-Email: ${CF_ID}" \
-			-H "X-Auth-Key: ${CF_KEY}" \
+			-H "Authorization: Bearer ${CF_KEY}" \
 			-H "Content-Type: application/json" \
 			--data '{"type":"NS","name":"'${NS_DOMAIN}'","content":"'${DOMAIN_PATH}'","proxied":false}' | jq -r .result.id
 		)
@@ -38,7 +38,7 @@ ns_domain_cloudflare() {
 	RESULT=$(
 		curl -sLX PUT "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_records/${RECORD}" \
 		-H "X-Auth-Email: ${CF_ID}" \
-		-H "X-Auth-Key: ${CF_KEY}" \
+		-H "Authorization: Bearer ${CF_KEY}" \
 		-H "Content-Type: application/json" \
 		--data '{"type":"NS","name":"'${NS_DOMAIN}'","content":"'${DOMAIN_PATH}'","proxied":false}'
 	)

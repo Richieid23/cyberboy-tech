@@ -294,7 +294,7 @@ r="\033[1;31m"  #REDTERANG
 a=" ${CYAN}ACCOUNT PREMIUM" 
 echo -e " "
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " ${z}│$NC${f}                 DIDA-STORE VPN                     $NC${z}│$NC"
+echo -e " ${z}│$NC${f}                 AMAQ-NAJWA VPN                     $NC${z}│$NC"
 echo -e " ${z}╰══════════════════════════════════════════════════════════╯${NC}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
 echo -e " ${z}│$NC$r ⇲ $NC$y System OS ${NC}     $Blue=$NC $MODEL${NC}"
